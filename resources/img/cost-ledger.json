@@ -1,0 +1,166 @@
+{
+  "runs": [
+    {
+      "model": "google/gemini-3.1-flash-image",
+      "shot": "hero-doorway-welcome",
+      "status": "OK",
+      "file": "gemini-3-1-flash-image\\hero-doorway-welcome.jpg",
+      "cost_usd": 0.067288,
+      "image_tokens": 1120
+    },
+    {
+      "model": "google/gemini-3.1-flash-image",
+      "shot": "priest-performing-homam",
+      "status": "OK",
+      "file": "gemini-3-1-flash-image\\priest-performing-homam.jpg",
+      "cost_usd": 0.067281,
+      "image_tokens": 1120
+    },
+    {
+      "model": "google/gemini-3.1-flash-image",
+      "shot": "kalash-samagri-flatlay",
+      "status": "OK",
+      "file": "gemini-3-1-flash-image\\kalash-samagri-flatlay.jpg",
+      "cost_usd": 0.067284,
+      "image_tokens": 1120
+    },
+    {
+      "model": "google/gemini-3.1-flash-image",
+      "shot": "mandap-backdrop-styled",
+      "status": "OK",
+      "file": "gemini-3-1-flash-image\\mandap-backdrop-styled.jpg",
+      "cost_usd": 0.067278,
+      "image_tokens": 1120
+    },
+    {
+      "model": "google/gemini-3-pro-image",
+      "shot": "diya-marigold-petals",
+      "status": "OK",
+      "file": "gemini-3-pro-image\\diya-marigold-petals.jpg",
+      "cost_usd": 0.13865,
+      "image_tokens": 1120
+    },
+    {
+      "model": "google/gemini-3-pro-image",
+      "shot": "flower-garland-closeup",
+      "status": "OK",
+      "file": "gemini-3-pro-image\\flower-garland-closeup.jpg",
+      "cost_usd": 0.138498,
+      "image_tokens": 1120
+    },
+    {
+      "model": "google/gemini-3-pro-image",
+      "shot": "homam-fire-ritual-wide",
+      "status": "OK",
+      "file": "gemini-3-pro-image\\homam-fire-ritual-wide.jpg",
+      "cost_usd": 0.138844,
+      "image_tokens": 1120
+    },
+    {
+      "model": "google/gemini-3-pro-image",
+      "shot": "couple-coconut-threshold",
+      "status": "OK",
+      "file": "gemini-3-pro-image\\couple-coconut-threshold.jpg",
+      "cost_usd": 0.13872,
+      "image_tokens": 1120
+    },
+    {
+      "model": "google/gemini-2.5-flash-image",
+      "shot": "puja-thali-decorated",
+      "status": "OK",
+      "file": "gemini-2-5-flash-image\\puja-thali-decorated.jpg",
+      "cost_usd": 0.038742,
+      "image_tokens": 1290
+    },
+    {
+      "model": "google/gemini-2.5-flash-image",
+      "shot": "satvik-food-banana-leaf",
+      "status": "OK",
+      "file": "gemini-2-5-flash-image\\satvik-food-banana-leaf.jpg",
+      "cost_usd": 0.038806,
+      "image_tokens": 1290
+    },
+    {
+      "model": "google/gemini-2.5-flash-image",
+      "shot": "serving-staff-in-action",
+      "status": "OK",
+      "file": "gemini-2-5-flash-image\\serving-staff-in-action.jpg",
+      "cost_usd": 0.0387387,
+      "image_tokens": 1290
+    },
+    {
+      "model": "google/gemini-2.5-flash-image",
+      "shot": "cow-puja-gau-puja",
+      "status": "OK",
+      "file": "gemini-2-5-flash-image\\cow-puja-gau-puja.jpg",
+      "cost_usd": 0.0387396,
+      "image_tokens": 1290
+    },
+    {
+      "model": "openai/gpt-5-image",
+      "shot": "return-gifts-arranged",
+      "status": "OK",
+      "file": "gpt-5-image\\return-gifts-arranged.jpg",
+      "cost_usd": 0.20126,
+      "image_tokens": 4175
+    },
+    {
+      "model": "openai/gpt-5-image",
+      "shot": "rangoli-kolam-entrance",
+      "status": "OK",
+      "file": "gpt-5-image\\rangoli-kolam-entrance.jpg",
+      "cost_usd": 0.22181,
+      "image_tokens": 4175
+    },
+    {
+      "model": "openai/gpt-5-image",
+      "shot": "photographer-candid-moment",
+      "status": "OK",
+      "file": "gpt-5-image\\photographer-candid-moment.jpg",
+      "cost_usd": 0.2105,
+      "image_tokens": 4175
+    },
+    {
+      "model": "openai/gpt-5-image",
+      "shot": "brass-bell-and-diya",
+      "status": "OK",
+      "file": "gpt-5-image\\brass-bell-and-diya.jpg",
+      "cost_usd": 0.20533,
+      "image_tokens": 4175
+    },
+    {
+      "model": "openai/gpt-5.4-image-2",
+      "shot": "family-group-doorway-portrait",
+      "status": "OK",
+      "file": "gpt-5-4-image-2\\family-group-doorway-portrait.jpg",
+      "cost_usd": 0.228497,
+      "image_tokens": 7024
+    },
+    {
+      "model": "openai/gpt-5.4-image-2",
+      "shot": "incense-smoke-detail",
+      "status": "OK",
+      "file": "gpt-5-4-image-2\\incense-smoke-detail.jpg",
+      "cost_usd": 0.22735,
+      "image_tokens": 7024
+    },
+    {
+      "model": "openai/gpt-5.4-image-2",
+      "shot": "guests-seated-ceremony-wide",
+      "status": "OK",
+      "file": "gpt-5-4-image-2\\guests-seated-ceremony-wide.jpg",
+      "cost_usd": 0.228212,
+      "image_tokens": 7024
+    },
+    {
+      "model": "openai/gpt-5.4-image-2",
+      "shot": "new-home-exterior-dusk",
+      "status": "OK",
+      "file": "gpt-5-4-image-2\\new-home-exterior-dusk.jpg",
+      "cost_usd": 0.22752,
+      "image_tokens": 7024
+    }
+  ],
+  "total_usd": 2.7293483000000003,
+  "ok": 20
+}
