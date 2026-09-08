@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Housepooja — Gruhapravesh Package</title>
+<meta name="description" content="A complete Gruhapravesh housewarming package — priest, pooja samagri, decor, homam, food and photography, arranged as one booking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon-950:#230810;
+    --maroon-900:#38101a;
+    --maroon-800:#4a1524;
+    --maroon-700:#5c1c2c;
+    --gold:#c9962c;
+    --gold-soft:#e3c07f;
+    --gold-dim:#8a6a2f;
+    --vermillion:#c1441e;
+    --teal:#0f4c4a;
+    --teal-soft:#2c7873;
+    --ivory:#f7efe1;
+    --ivory-2:#fbf6ec;
+    --ink:#2a1810;
+    --ink-soft:#6b5644;
+    --line:rgba(201,150,44,0.35);
+    --shadow: 0 20px 45px -25px rgba(35,8,16,0.55);
+    --container: 1160px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *,*::before,*::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--ink);
+    font-family:'Manrope', system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:'Cormorant Garamond', Georgia, serif;
+    color:var(--ink);
+    margin:0;
+    font-weight:600;
+    line-height:1.12;
+  }
+
+  p{ margin:0; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ margin:0; padding:0; list-style:none; }
+  button{ font:inherit; cursor:pointer; }
+  img,svg{ display:block; max-width:100%; }
+
+  .icon{ width:1em; height:1em; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+
+  .wrap{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:0 1.5rem;
+  }
+  @media (min-width:640px){ .wrap{ padding:0 2.5rem; } }
+
+  .eyebrow{
+    font-family:'Manrope', sans-serif;
+    font-size:0.8rem;
+    font-weight:700;
+    letter-spacing:0.04em;
+    color:var(--gold-dim);
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    padding:0.85rem 1.6rem;
+    border-radius:2px;
+    font-weight:700;
+    font-size:0.95rem;
+    border:1.5px solid transparent;
+    transition:transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn:focus-visible{ outline:3px solid var(--gold-soft); outline-offset:2px; }
+
+  .btn--gold{
+    background:var(--gold);
+    color:var(--maroon-950);
+  }
+  .btn--gold:hover{ background:var(--gold-soft); }
+
+  .btn--outline-light{
+    border-color:rgba(247,239,225,0.55);
+    color:var(--ivory-2);
+  }
+  .btn--outline-light:hover{ border-color:var(--gold-soft); color:var(--gold-soft); }
+
+  .btn--outline-dark{
+    border-color:var(--maroon-800);
+    color:var(--maroon-900);
+  }
+  .btn--outline-dark:hover{ border-color:var(--vermillion); color:var(--vermillion); }
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(35,8,16,0.92);
+    backdrop-filter:saturate(140%) blur(6px);
+    border-bottom:1px solid rgba(201,150,44,0.25);
+    transition:padding 0.25s ease;
+  }
+  .site-header .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:1.1rem;
+    padding-bottom:1.1rem;
+    transition:padding 0.25s ease;
+  }
+  .site-header.is-condensed .wrap{ padding-top:0.65rem; padding-bottom:0.65rem; }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:0.65rem;
+    color:var(--ivory-2);
+  }
+  .brand .icon{ width:1.9rem; height:1.9rem; color:var(--gold); flex-shrink:0; }
+  .brand-name{
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.5rem;
+    font-weight:700;
+    letter-spacing:0.01em;
+    color:var(--ivory-2);
+  }
+
+  .main-nav{ display:none; }
+  .main-nav ul{ display:flex; gap:2rem; }
+  .main-nav a{
+    color:rgba(247,239,225,0.85);
+    font-size:0.95rem;
+    font-weight:600;
+    position:relative;
+    padding:0.25rem 0;
+  }
+  .main-nav a::after{
+    content:"";
+    position:absolute;
+    left:0; right:100%;
+    bottom:-2px;
+    height:1px;
+    background:var(--gold);
+    transition:right 0.25s ease;
+  }
+  .main-nav a:hover::after{ right:0; }
+
+  .header-actions{ display:flex; align-items:center; gap:1.1rem; }
+  .social-links{ display:none; align-items:center; gap:0.9rem; }
+  .social-links a{ color:rgba(247,239,225,0.75); }
+  .social-links a:hover{ color:var(--gold-soft); }
+  .social-links .icon{ width:1.15rem; height:1.15rem; }
+
+  .nav-toggle{
+    background:none; border:none; color:var(--ivory-2);
+    width:2.4rem; height:2.4rem; display:flex; align-items:center; justify-content:center;
+  }
+  .nav-toggle .icon{ width:1.5rem; height:1.5rem; }
+  .nav-toggle[aria-expanded="true"] .icon-open{ display:none; }
+  .nav-toggle:not([aria-expanded="true"]) .icon-close{ display:none; }
+
+  .mobile-nav{
+    display:none;
+    flex-direction:column;
+    background:var(--maroon-950);
+    border-bottom:1px solid rgba(201,150,44,0.25);
+  }
+  .mobile-nav.is-open{ display:flex; }
+  .mobile-nav a{
+    color:var(--ivory-2);
+    padding:1rem 1.5rem;
+    border-top:1px solid rgba(201,150,44,0.15);
+    font-weight:600;
+  }
+  .mobile-nav .mobile-social{
+    display:flex; gap:1.25rem;
+    padding:1rem 1.5rem 1.4rem;
+    border-top:1px solid rgba(201,150,44,0.15);
+  }
+  .mobile-nav .mobile-social a{ padding:0; border:none; color:var(--gold-soft); }
+  .mobile-nav .mobile-social .icon{ width:1.3rem; height:1.3rem; }
+
+  @media (min-width:900px){
+    .main-nav{ display:block; }
+    .social-links{ display:flex; }
+    .nav-toggle{ display:none; }
+    .mobile-nav{ display:none !important; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:radial-gradient(120% 140% at 50% -10%, var(--maroon-800), var(--maroon-950) 65%);
+    color:var(--ivory-2);
+    padding:5.5rem 0 6.5rem;
+    overflow:hidden;
+  }
+  .hero::before,
+  .hero::after{
+    content:"";
+    position:absolute;
+    width:520px; height:520px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(201,150,44,0.14), transparent 70%);
+  }
+  .hero::before{ top:-220px; left:-160px; }
+  .hero::after{ bottom:-260px; right:-180px; background:radial-gradient(circle, rgba(15,76,74,0.28), transparent 70%); }
+
+  .hero-inner{
+    position:relative;
+    max-width:760px;
+    margin:0 auto;
+    text-align:center;
+  }
+
+  .hero-frame{
+    position:relative;
+    padding:3rem 1.25rem 2.5rem;
+    border:1px solid var(--line);
+  }
+  .corner{ position:absolute; width:34px; height:34px; color:var(--gold); opacity:0.8; }
+  .corner .icon{ width:100%; height:100%; }
+  .corner--tl{ top:-1px; left:-1px; }
+  .corner--tr{ top:-1px; right:-1px; transform:scaleX(-1); }
+  .corner--bl{ bottom:-1px; left:-1px; transform:scaleY(-1); }
+  .corner--br{ bottom:-1px; right:-1px; transform:scale(-1,-1); }
+
+  .hero-emblem{
+    width:74px; height:74px;
+    margin:0 auto 1.5rem;
+    color:var(--gold);
+    animation:emblem-in 1s ease both;
+  }
+  @keyframes emblem-in{
+    from{ opacity:0; transform:translateY(10px) scale(0.92); }
+    to{ opacity:1; transform:translateY(0) scale(1); }
+  }
+
+  .hero-kicker{
+    font-size:0.85rem;
+    font-weight:700;
+    letter-spacing:0.03em;
+    color:var(--gold-soft);
+    margin-bottom:0.9rem;
+  }
+
+  .hero h1{
+    font-size:clamp(2.35rem, 4.4vw + 1rem, 3.9rem);
+    color:var(--ivory-2);
+    max-width:14ch;
+    margin:0 auto;
+  }
+
+  .hero-lede{
+    margin:1.6rem auto 0;
+    max-width:52ch;
+    font-size:1.08rem;
+    color:rgba(247,239,225,0.82);
+  }
+
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:1rem;
+    margin-top:2.4rem;
+  }
+
+  /* ---------- Section shell ---------- */
+  section{ position:relative; }
+  .section-pad{ padding:5rem 0; }
+  @media (min-width:768px){ .section-pad{ padding:7rem 0; } }
+
+  .section-head{
+    max-width:640px;
+    margin:0 auto 3rem;
+    text-align:center;
+  }
+  .section-head h2{
+    font-size:clamp(1.9rem, 2.6vw + 1rem, 2.6rem);
+    margin-top:0.6rem;
+  }
+  .section-head .eyebrow{ display:block; margin-bottom:0.4rem; }
+  .section-head p{
+    margin-top:1rem;
+    color:var(--ink-soft);
+    font-size:1.02rem;
+  }
+
+  .rule{
+    width:56px; height:2px;
+    background:var(--gold);
+    margin:0 auto 1.25rem;
+  }
+
+  /* ---------- Why us ---------- */
+  .why-us{ background:var(--ivory); }
+  .value-grid{
+    display:grid;
+    gap:1.75rem;
+    grid-template-columns:1fr;
+  }
+  @media (min-width:640px){ .value-grid{ grid-template-columns:1fr 1fr; } }
+  @media (min-width:1024px){ .value-grid{ grid-template-columns:repeat(4,1fr); } }
+
+  .value-card{
+    padding:2rem 1.6rem;
+    border-top:2px solid var(--gold);
+    background:var(--ivory-2);
+  }
+  .value-card .icon{ width:1.9rem; height:1.9rem; color:var(--vermillion); margin-bottom:1.1rem; }
+  .value-card h3{
+    font-size:1.28rem;
+    margin-bottom:0.6rem;
+  }
+  .value-card p{ color:var(--ink-soft); font-size:0.96rem; }
+
+  /* ---------- Services ledger ---------- */
+  .services{ background:var(--maroon-950); color:var(--ivory-2); }
+  .services .section-head p{ color:rgba(247,239,225,0.72); }
+  .services .rule{ background:var(--gold); }
+
+  .ledger{
+    border-top:1px solid var(--line);
+    max-width:920px;
+    margin:0 auto;
+  }
+  .ledger-item{
+    display:flex;
+    align-items:flex-start;
+    gap:1.1rem;
+    padding:1.4rem 0.25rem;
+    border-bottom:1px solid var(--line);
+  }
+  .ledger-item .icon-box{
+    flex-shrink:0;
+    width:2.6rem; height:2.6rem;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--gold);
+  }
+  .ledger-item .icon{ width:1.5rem; height:1.5rem; }
+  .ledger-copy h3{
+    font-family:'Manrope', sans-serif;
+    font-size:1.05rem;
+    font-weight:700;
+    color:var(--ivory-2);
+    margin-bottom:0.25rem;
+  }
+  .ledger-copy p{
+    font-size:0.92rem;
+    color:rgba(247,239,225,0.66);
+  }
+
+  @media (min-width:768px){
+    .ledger{ display:grid; grid-template-columns:1fr 1fr; column-gap:2.5rem; border-top:none; }
+    .ledger-item{ border-top:1px solid var(--line); }
+    .ledger-item:nth-last-child(-n+2){ border-bottom:1px solid var(--line); }
+  }
+
+  /* ---------- Pricing ---------- */
+  .pricing{ background:var(--ivory); }
+  .price-grid{
+    display:grid;
+    gap:1.75rem;
+    grid-template-columns:1fr;
+    max-width:1020px;
+    margin:0 auto;
+  }
+  @media (min-width:860px){ .price-grid{ grid-template-columns:repeat(3,1fr); align-items:stretch; } }
+
+  .price-card{
+    position:relative;
+    background:var(--ivory-2);
+    border:1px solid rgba(42,24,16,0.12);
+    border-top:3px solid var(--teal);
+    padding:2.4rem 1.9rem 2.1rem;
+    display:flex;
+    flex-direction:column;
+  }
+  .price-card--popular{
+    border-top-color:var(--vermillion);
+    box-shadow:var(--shadow);
+    background:var(--ivory-2);
+  }
+  @media (min-width:860px){ .price-card--popular{ transform:translateY(-0.85rem); } }
+
+  .price-seal{
+    position:absolute;
+    top:-14px; right:1.6rem;
+    background:var(--vermillion);
+    color:var(--ivory-2);
+    font-size:0.72rem;
+    font-weight:700;
+    letter-spacing:0.02em;
+    padding:0.4rem 0.75rem;
+    border-radius:999px;
+  }
+
+  .price-guests{ color:var(--ink-soft); font-size:0.95rem; font-weight:700; }
+  .price-amount{
+    font-family:'Cormorant Garamond', serif;
+    font-size:2.6rem;
+    font-weight:700;
+    color:var(--maroon-900);
+    margin:0.35rem 0 1.4rem;
+  }
+  .price-amount sup{ font-size:1.1rem; top:-0.9em; }
+
+  .price-note{
+    color:var(--ink-soft);
+    font-size:0.92rem;
+    margin-bottom:1.8rem;
+    padding-bottom:1.6rem;
+    border-bottom:1px solid rgba(42,24,16,0.12);
+  }
+
+  .price-list{ margin-bottom:2rem; flex-grow:1; }
+  .price-list li{
+    display:flex; align-items:flex-start; gap:0.6rem;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    padding:0.35rem 0;
+  }
+  .price-list .icon{ width:1rem; height:1rem; color:var(--teal-soft); flex-shrink:0; margin-top:0.25rem; }
+
+  .price-card .btn{ justify-content:center; width:100%; }
+
+  /* ---------- Contact band ---------- */
+  .contact-band{
+    background:linear-gradient(135deg, var(--teal), var(--maroon-950) 75%);
+    color:var(--ivory-2);
+    padding:4.5rem 0;
+    text-align:center;
+  }
+  .contact-band h2{ color:var(--ivory-2); font-size:clamp(1.9rem, 2.6vw + 1rem, 2.5rem); }
+  .contact-band p{
+    margin:1.1rem auto 2.2rem;
+    max-width:46ch;
+    color:rgba(247,239,225,0.82);
+  }
+  .contact-actions{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; }
+  .contact-actions .icon{ width:1.15rem; height:1.15rem; }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--maroon-950);
+    color:rgba(247,239,225,0.68);
+    padding:3rem 0 2.2rem;
+  }
+  .footer-top{
+    display:flex;
+    flex-direction:column;
+    gap:1.75rem;
+    align-items:flex-start;
+    padding-bottom:2rem;
+    border-bottom:1px solid rgba(201,150,44,0.2);
+  }
+  @media (min-width:768px){
+    .footer-top{ flex-direction:row; justify-content:space-between; align-items:center; }
+  }
+  .footer-brand{ display:flex; align-items:center; gap:0.6rem; }
+  .footer-brand .icon{ width:1.5rem; height:1.5rem; color:var(--gold); }
+  .footer-brand span{ font-family:'Cormorant Garamond', serif; font-size:1.2rem; color:var(--ivory-2); }
+  .footer-tagline{ font-size:0.9rem; margin-top:0.35rem; color:rgba(247,239,225,0.55); }
+  .footer-social{ display:flex; gap:1.2rem; }
+  .footer-social a{ color:rgba(247,239,225,0.75); }
+  .footer-social a:hover{ color:var(--gold-soft); }
+  .footer-social .icon{ width:1.2rem; height:1.2rem; }
+  .footer-bottom{
+    padding-top:1.6rem;
+    font-size:0.82rem;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.5rem 1.5rem;
+    justify-content:space-between;
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<svg style="position:absolute; width:0; height:0; overflow:hidden;" aria-hidden="true">
+  <defs>
+    <symbol id="i-bell" viewBox="0 0 48 48">
+      <path d="M24 6c0 2-1 3-1 5" />
+      <path d="M13 33c0-9 3-17 11-17s11 8 11 17" />
+      <path d="M10 33h28" />
+      <path d="M18 38c0 2.5 2.7 4 6 4s6-1.5 6-4" />
+      <circle cx="24" cy="8" r="2" />
+    </symbol>
+    <symbol id="i-kalash" viewBox="0 0 48 48">
+      <path d="M24 6v5" />
+      <path d="M15 11h18l-2 6H17z" />
+      <path d="M13 17h22c1 8-3 14-11 14s-12-6-11-14z" />
+      <path d="M9 39c3-3 6-4 15-4s12 1 15 4" />
+      <path d="M12 11c2-3 4-4 4-4" />
+      <path d="M36 11c-2-3-4-4-4-4" />
+    </symbol>
+    <symbol id="i-door" viewBox="0 0 48 48">
+      <path d="M11 41V20c0-8 6-13 13-13s13 5 13 13v21" />
+      <path d="M8 41h32" />
+      <path d="M24 26v9" />
+    </symbol>
+    <symbol id="i-basket" viewBox="0 0 48 48">
+      <path d="M10 20h28l-3 19H13z" />
+      <path d="M17 20l3-9h8l3 9" />
+      <path d="M15 26l1 8" /><path d="M24 26v8" /><path d="M33 26l-1 8" />
+    </symbol>
+    <symbol id="i-mandap" viewBox="0 0 48 48">
+      <path d="M8 41V16l16-9 16 9v25" />
+      <path d="M14 41V22" /><path d="M34 41V22" />
+      <path d="M8 22h32" />
+      <circle cx="24" cy="14" r="1.6" />
+    </symbol>
+    <symbol id="i-flower" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="4" />
+      <path d="M24 20c-4-4-4-9 0-11 4 2 4 7 0 11z" />
+      <path d="M28 24c4-4 9-4 11 0-2 4-7 4-11 0z" />
+      <path d="M24 28c4 4 4 9 0 11-4-2-4-7 0-11z" />
+      <path d="M20 24c-4 4-9 4-11 0 2-4 7-4 11 0z" />
+    </symbol>
+    <symbol id="i-flame" viewBox="0 0 48 48">
+      <path d="M24 6c6 8 10 12 10 20a10 10 0 0 1-20 0c0-3 1-5 3-7 0 3 2 4 3 3-1-6 1-11 4-16z" />
+    </symbol>
+    <symbol id="i-bowl" viewBox="0 0 48 48">
+      <path d="M8 24h32c0 8-7 14-16 14S8 32 8 24z" />
+      <path d="M17 24c0-4 3-8 7-8s7 4 7 8" />
+    </symbol>
+    <symbol id="i-thali" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="16" />
+      <circle cx="24" cy="24" r="4" />
+      <path d="M24 8v8" /><path d="M24 32v8" /><path d="M8 24h8" /><path d="M32 24h8" />
+    </symbol>
+    <symbol id="i-cow" viewBox="0 0 48 48">
+      <path d="M12 20c-3-3-3-7 0-8 2 3 2 5 2 5" />
+      <path d="M36 20c3-3 3-7 0-8-2 3-2 5-2 5" />
+      <path d="M13 21c0-5 5-8 11-8s11 3 11 8c0 8-4 13-11 13s-11-5-11-13z" />
+      <circle cx="19" cy="21" r="1.4" /><circle cx="29" cy="21" r="1.4" />
+      <path d="M20 27c1 1 2 1.4 4 1.4s3-.4 4-1.4" />
+    </symbol>
+    <symbol id="i-gift" viewBox="0 0 48 48">
+      <rect x="9" y="19" width="30" height="21" />
+      <path d="M9 26h30" />
+      <path d="M24 19v21" />
+      <path d="M24 19c-3-8-13-8-13-2 0 3 5 2 13 2z" />
+      <path d="M24 19c3-8 13-8 13-2 0 3-5 2-13 2z" />
+    </symbol>
+    <symbol id="i-camera" viewBox="0 0 48 48">
+      <rect x="6" y="14" width="36" height="24" rx="2" />
+      <path d="M17 14l3-5h8l3 5" />
+      <circle cx="24" cy="26" r="7" />
+    </symbol>
+    <symbol id="i-hand" viewBox="0 0 48 48">
+      <path d="M24 8v14" />
+      <path d="M14 40c0-9 3-15 10-16" />
+      <path d="M34 40c0-9-3-15-10-16" />
+      <path d="M24 22c-4 3-6 3-10 1" />
+      <path d="M24 22c4 3 6 3 10 1" />
+    </symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4.2" />
+      <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" />
+    </symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24">
+      <path d="M15 8h-2c-1.1 0-2 .9-2 2v2H9v3h2v6h3v-6h2.2l.8-3H14v-1.6c0-.5.4-.9.9-.9H16V8z" />
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <path d="M4 7h16" /><path d="M4 12h16" /><path d="M4 17h16" />
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="M5 5l14 14" /><path d="M19 5L5 19" />
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="M4 12l5 5L20 6" />
+    </symbol>
+    <symbol id="i-corner" viewBox="0 0 34 34">
+      <path d="M2 2v14" /><path d="M2 2h14" />
+      <path d="M2 22c6 0 10 4 10 10" />
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Housepooja home">
+      <svg class="icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+      <span class="brand-name">Housepooja</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <div class="social-links">
+        <a href="#" aria-label="Housepooja on Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+        <a href="#" aria-label="Housepooja on Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"></use></svg></a>
+      </div>
+      <a class="btn btn--gold" href="#contact">Enquire Now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+        <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"></use></svg>
+        <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"></use></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+    <a href="#why-us">Why Us</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+    <div class="mobile-social">
+      <a href="#" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+      <a href="#" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"></use></svg></a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-frame">
+        <div class="corner corner--tl"><svg class="icon"><use href="#i-corner"></use></svg></div>
+        <div class="corner corner--tr"><svg class="icon"><use href="#i-corner"></use></svg></div>
+        <div class="corner corner--bl"><svg class="icon"><use href="#i-corner"></use></svg></div>
+        <div class="corner corner--br"><svg class="icon"><use href="#i-corner"></use></svg></div>
+
+        <svg class="hero-emblem" aria-hidden="true"><use href="#i-kalash"></use></svg>
+        <p class="hero-kicker">Gruhapravesh Package</p>
+        <h1>A housewarming that runs itself.</h1>
+        <p class="hero-lede">Between two careers, a new flat, and family a flight away, nobody has a spare weekend to source a priest, forty pooja items, and a caterer. We bring the whole ceremony — priest to prasadam — so you just welcome your guests.</p>
+        <div class="hero-actions">
+          <a class="btn btn--gold" href="#services">See what's included</a>
+          <a class="btn btn--outline-light" href="#pricing">View pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-us section-pad" id="why-us">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why Housepooja</span>
+        <h2>Less coordinating, more ceremony</h2>
+        <p>You've moved cities for work, and the people who'd usually plan this for you are a flight away. Here's what changes when we take it over.</p>
+      </div>
+      <div class="value-grid">
+        <div class="value-card reveal">
+          <svg class="icon"><use href="#i-hand"></use></svg>
+          <h3>One booking, not twelve vendors</h3>
+          <p>Skip the separate calls to a priest, a florist, a caterer and a decorator — we coordinate all of it under one plan.</p>
+        </div>
+        <div class="value-card reveal">
+          <svg class="icon"><use href="#i-bell"></use></svg>
+          <h3>Rituals done right</h3>
+          <p>A priest leads the full ceremony correctly, even if your family's customs are something you've never had to organise yourself.</p>
+        </div>
+        <div class="value-card reveal">
+          <svg class="icon"><use href="#i-flame"></use></svg>
+          <h3>Your weekend, back</h3>
+          <p>Setup, service and cleanup are ours to handle, so the day is about your guests, not your task list.</p>
+        </div>
+        <div class="value-card reveal">
+          <svg class="icon"><use href="#i-gift"></use></svg>
+          <h3>One price, no surprises</h3>
+          <p>The package covers everything on the list below — nothing shows up afterward as an extra line item.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services section-pad" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" style="color:var(--gold-soft);">What's Included</span>
+        <h2>Everything for the day, arranged</h2>
+        <p>From the first guest at the door to the photographs you'll keep — eleven parts of the ceremony, handled.</p>
+      </div>
+      <div class="ledger">
+        <div class="ledger-item reveal">
+          <span class="icon-box"><svg class="icon"><use href="#i-door"></use></svg></span>
+          <div class="ledger-copy"><h3>Welcoming guests</h3><p>Someone at the door to greet and seat every arrival.</p></div>
+        </div>
+        <div class="ledger-item reveal">
+          <span class="icon-box"><svg class="icon"><use href="#i-bell"></use></svg></span>
+          <div class="ledger-copy"><h3>Poojari</h3><p>An experienced priest to lead the complete ceremony.</p></div>
+        </div>
+        <div class="ledger-item reveal">
+          <span class="icon-box"><svg class="icon"><use href="#i-basket"></use></svg></span>
+          <div class="ledger-copy"><h3>Pooja samagri</h3><p>Every ritual item sourced and ready, down to the last wick.</p></div>
+        </div>
+        <div class="ledger-item reveal">
+          <span class="icon-box"><svg class="icon"><use href="#i-mandap"></use></svg></span>
+          <div class="ledger-copy"><h3>Pooja theme backdrop</h3><p>A styled setting built for the ceremony itself.</p></div>
+        </div>
+        <div class="ledger-item reveal">
+          <span class="icon-box"><svg class="icon"><use href="#i-flower"></use></svg></span>
+          <div class="ledger-copy"><h3>Flower decoration</h3><p>Fresh garlands and floral styling through the space.</p></div>
+        </div>
+        <div class="ledger-item reveal">
+          <span class="icon-box"><svg class="icon"><use href="#i-flame"></use></svg></span>
+          <div class="ledger-copy"><h3>Homam</h3><p>The sacred fire ritual, set up and performed in full.</p></div>
+        </div>
+        <div class="ledger-item reveal">
+          <span class="icon-box"><svg class="icon"><use href="#i-bowl"></use></svg></span>
+          <div class="ledger-copy"><h3>Prasadam</h3><p>Blessed offerings prepared and distributed to guests.</p></div>
+        </div>
+        <div class="ledger-item reveal">
+          <span class="icon-box"><svg class="icon"><use href="#i-thali"></use></svg></span>
+          <div class="ledger-copy"><h3>Satvik food + serving</h3><p>A full vegetarian spread, served to every guest.</p></div>
+        </div>
+        <div class="ledger-item reveal">
+          <span class="icon-box"><svg class="icon"><use href="#i-cow"></use></svg></span>
+          <div class="ledger-copy"><h3>Cow visit</h3><p>For the traditional Gau Puja, arranged for the day.</p></div>
+        </div>
+        <div class="ledger-item reveal">
+          <span class="icon-box"><svg class="icon"><use href="#i-gift"></use></svg></span>
+          <div class="ledger-copy"><h3>Return gifts</h3><p>A small gift ready for every guest to take home.</p></div>
+        </div>
+        <div class="ledger-item reveal">
+          <span class="icon-box"><svg class="icon"><use href="#i-camera"></use></svg></span>
+          <div class="ledger-copy"><h3>Photography</h3><p>The day captured and handed to you as a soft copy.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing section-pad" id="pricing">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Pricing</span>
+        <h2>One package, sized to your guest list</h2>
+        <p>Every tier includes all eleven services above — the only difference is how many guests you're hosting.</p>
+      </div>
+      <div class="price-grid">
+        <div class="price-card reveal">
+          <p class="price-guests">100 guests</p>
+          <p class="price-amount"><sup>₹</sup>3,90,000</p>
+          <p class="price-note">Everything above, arranged for up to 100 guests.</p>
+          <ul class="price-list">
+            <li><svg class="icon"><use href="#i-check"></use></svg>Full Gruhapravesh ceremony</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg>Satvik food + serving staff</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg>Return gifts for every guest</li>
+          </ul>
+          <a class="btn btn--outline-dark" href="#contact">Enquire Now</a>
+        </div>
+
+        <div class="price-card price-card--popular reveal">
+          <span class="price-seal">Most chosen</span>
+          <p class="price-guests">150 guests</p>
+          <p class="price-amount"><sup>₹</sup>4,40,000</p>
+          <p class="price-note">Everything above, arranged for up to 150 guests.</p>
+          <ul class="price-list">
+            <li><svg class="icon"><use href="#i-check"></use></svg>Full Gruhapravesh ceremony</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg>Satvik food + serving staff</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg>Return gifts for every guest</li>
+          </ul>
+          <a class="btn btn--gold" href="#contact">Enquire Now</a>
+        </div>
+
+        <div class="price-card reveal">
+          <p class="price-guests">200 guests</p>
+          <p class="price-amount"><sup>₹</sup>4,75,000</p>
+          <p class="price-note">Everything above, arranged for up to 200 guests.</p>
+          <ul class="price-list">
+            <li><svg class="icon"><use href="#i-check"></use></svg>Full Gruhapravesh ceremony</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg>Satvik food + serving staff</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg>Return gifts for every guest</li>
+          </ul>
+          <a class="btn btn--outline-dark" href="#contact">Enquire Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-band" id="contact">
+    <div class="wrap reveal">
+      <h2>Ready to fix a date?</h2>
+      <p>Tell us your guest count and your new address, and we'll take it from there.</p>
+      <div class="contact-actions">
+        <!-- TODO: replace with real Instagram/Facebook profile URLs and a phone/email once available -->
+        <a class="btn btn--gold" href="#"><svg class="icon"><use href="#i-instagram"></use></svg>Message on Instagram</a>
+        <a class="btn btn--outline-light" href="#"><svg class="icon"><use href="#i-facebook"></use></svg>Message on Facebook</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">
+          <svg class="icon" aria-hidden="true"><use href="#i-bell"></use></svg>
+          <span>Housepooja</span>
+        </div>
+        <p class="footer-tagline">Housewarming ceremonies, fully arranged.</p>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"></use></svg></a>
+        <a href="#" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"></use></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Housepooja.com</span>
+      <span>housepooja.com</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var header = document.getElementById('siteHeader');
+    var toggle = document.getElementById('navToggle');
+    var mobileNav = document.getElementById('mobileNav');
+
+    toggle.addEventListener('click', function(){
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      mobileNav.classList.toggle('is-open', !open);
+    });
+
+    mobileNav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        toggle.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('is-open');
+      });
+    });
+
+    var onScroll = function(){
+      header.classList.toggle('is-condensed', window.scrollY > 40);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var reveals = document.querySelectorAll('.reveal');
+    if (prefersReduced || !('IntersectionObserver' in window)) {
+      reveals.forEach(function(el){ el.classList.add('is-visible'); });
+    } else {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      reveals.forEach(function(el){ io.observe(el); });
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  })();
+</script>
+
+</body>
+</html>
