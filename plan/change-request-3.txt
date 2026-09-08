@@ -1,0 +1,2 @@
+get inspiration from https://houseofpuja.com/ website and list top 20 changes to do for our website based on that.
+to generate high quality hyper realistic images for our website, give unqiue 20 prompts and save them at 20-images.txt
