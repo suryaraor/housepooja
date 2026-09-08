@@ -376,6 +376,35 @@
     .ledger-item:nth-last-child(-n+2){ border-bottom:1px solid var(--line); }
   }
 
+  /* ---------- Gallery ---------- */
+  .gallery{ background:var(--ivory-2); }
+  .gallery-grid{
+    display:grid;
+    gap:1.5rem;
+    grid-template-columns:1fr;
+  }
+  @media (min-width:640px){ .gallery-grid{ grid-template-columns:repeat(3,1fr); } }
+
+  .gallery-item{
+    margin:0;
+    border:1px solid rgba(42,24,16,0.12);
+    background:var(--ivory);
+    padding:0.6rem;
+  }
+  .gallery-item img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    display:block;
+  }
+  .gallery-item figcaption{
+    padding:0.9rem 0.3rem 0.2rem;
+    text-align:center;
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.12rem;
+    color:var(--maroon-900);
+  }
+
   /* ---------- Pricing ---------- */
   .pricing{ background:var(--ivory); }
   .price-grid{
@@ -460,6 +489,34 @@
   .contact-actions{ display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; }
   .contact-actions .icon{ width:1.15rem; height:1.15rem; }
 
+  .contact-info{
+    margin-top:2.6rem;
+    padding-top:2rem;
+    border-top:1px solid rgba(247,239,225,0.25);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.85rem;
+  }
+  @media (min-width:640px){
+    .contact-info{ flex-direction:row; flex-wrap:wrap; justify-content:center; gap:0.6rem 1.75rem; }
+  }
+  .contact-info-row{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    font-size:0.95rem;
+    color:rgba(247,239,225,0.85);
+  }
+  .contact-info-row .icon{ width:1.05rem; height:1.05rem; color:var(--gold-soft); flex-shrink:0; }
+  .contact-info-row a{ margin-left:0.3rem; border-bottom:1px solid rgba(247,239,225,0.35); }
+  .contact-info-row a:hover{ color:var(--gold-soft); border-color:var(--gold-soft); }
+
+  .contact-social{ display:flex; justify-content:center; gap:1.25rem; margin-top:1.6rem; }
+  .contact-social a{ color:rgba(247,239,225,0.7); }
+  .contact-social a:hover{ color:var(--gold-soft); }
+  .contact-social .icon{ width:1.2rem; height:1.2rem; }
+
   /* ---------- Footer ---------- */
   footer{
     background:var(--maroon-950);
@@ -481,6 +538,7 @@
   .footer-brand .icon{ width:1.5rem; height:1.5rem; color:var(--gold); }
   .footer-brand span{ font-family:'Cormorant Garamond', serif; font-size:1.2rem; color:var(--ivory-2); }
   .footer-tagline{ font-size:0.9rem; margin-top:0.35rem; color:rgba(247,239,225,0.55); }
+  .footer-address{ font-size:0.85rem; margin-top:0.3rem; color:rgba(247,239,225,0.5); }
   .footer-social{ display:flex; gap:1.2rem; }
   .footer-social a{ color:rgba(247,239,225,0.75); }
   .footer-social a:hover{ color:var(--gold-soft); }
@@ -493,6 +551,7 @@
     gap:0.5rem 1.5rem;
     justify-content:space-between;
   }
+  .footer-bottom a:hover{ color:var(--gold-soft); }
 
   /* ---------- Scroll reveal ---------- */
   .reveal{ opacity:0; transform:translateY(14px); transition:opacity 0.6s ease, transform 0.6s ease; }
@@ -600,6 +659,21 @@
       <path d="M2 2v14" /><path d="M2 2h14" />
       <path d="M2 22c6 0 10 4 10 10" />
     </symbol>
+    <symbol id="i-phone" viewBox="0 0 48 48">
+      <path d="M12 9c2 0 4 1 5 3l2 4c1 2 0 4-1 5l-2 2c1 4 4 7 8 8l2-2c1-1 3-2 5-1l4 2c2 1 3 3 3 5v3c0 3-2 5-5 5C20 43 5 28 5 15c0-3 2-5 5-5h2z" />
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 48 48">
+      <rect x="6" y="10" width="36" height="28" rx="2" />
+      <path d="M6 12l18 14L42 12" />
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 48 48">
+      <path d="M24 5c8 0 14 6 14 14 0 10-14 24-14 24S10 29 10 19c0-8 6-14 14-14z" />
+      <circle cx="24" cy="19" r="5" />
+    </symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24">
+      <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z" />
+      <path d="M8.5 8.3c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.4.2.5.7 1.6.7 1.8.1.1.1.3 0 .4-.1.2-.1.3-.3.4l-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.4.2.4.4 0 .6-.2 1.2-.6 1.6-.4.4-1.2.7-1.8.7-.9 0-2.4-.4-4.1-2-2-1.8-3.3-3.9-3.4-4.5-.1-.5-.6-1.5-.4-2.4z" />
+    </symbol>
   </defs>
 </svg>
 
@@ -614,6 +688,7 @@
       <ul>
         <li><a href="#why-us">Why Us</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#pricing">Pricing</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -635,6 +710,7 @@
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
     <a href="#why-us">Why Us</a>
     <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
     <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
     <div class="mobile-social">
@@ -753,6 +829,30 @@
     </div>
   </section>
 
+  <section class="gallery section-pad" id="gallery">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">A Glimpse</span>
+        <h2>The details we bring with us</h2>
+        <p>A small look at the samagri, flowers and rituals that go into every Gruhapravesh we arrange.</p>
+      </div>
+      <div class="gallery-grid">
+        <figure class="gallery-item reveal">
+          <img src="resources/img/diya-petals.jpg" alt="A lit clay diya resting among marigold petals" loading="lazy">
+          <figcaption>Diya, lit for the homam</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="resources/img/marigold.jpg" alt="Close-up of a fresh marigold flower used in the decor" loading="lazy">
+          <figcaption>Fresh marigold for the decor</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="resources/img/puja-thali.jpg" alt="A decorated pooja thali with kumkum and ritual items" loading="lazy">
+          <figcaption>The pooja thali, ready</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <section class="pricing section-pad" id="pricing">
     <div class="wrap">
       <div class="section-head reveal">
@@ -806,9 +906,21 @@
       <h2>Ready to fix a date?</h2>
       <p>Tell us your guest count and your new address, and we'll take it from there.</p>
       <div class="contact-actions">
-        <!-- TODO: replace with real Instagram/Facebook profile URLs and a phone/email once available -->
-        <a class="btn btn--gold" href="#"><svg class="icon"><use href="#i-instagram"></use></svg>Message on Instagram</a>
-        <a class="btn btn--outline-light" href="#"><svg class="icon"><use href="#i-facebook"></use></svg>Message on Facebook</a>
+        <a class="btn btn--gold" href="https://wa.me/919845690809" target="_blank" rel="noopener"><svg class="icon"><use href="#i-whatsapp"></use></svg>Message on WhatsApp</a>
+        <a class="btn btn--outline-light" href="tel:+919845690809"><svg class="icon"><use href="#i-phone"></use></svg>Call Now</a>
+      </div>
+
+      <div class="contact-info">
+        <span class="contact-info-row"><svg class="icon"><use href="#i-phone"></use></svg>Sunil Kumar Tekumal — <a href="tel:+919845690809">98456 90809</a></span>
+        <span class="contact-info-row"><svg class="icon"><use href="#i-phone"></use></svg>Ramya Tekumal — <a href="tel:+919972255895">99722 55895</a></span>
+        <span class="contact-info-row"><svg class="icon"><use href="#i-mail"></use></svg><a href="mailto:27.sunil@gmail.com">27.sunil@gmail.com</a></span>
+        <span class="contact-info-row"><svg class="icon"><use href="#i-pin"></use></svg>138, Hi-Rise PVR Meadows, Mallampet, Bachupally, Hyderabad – 500090</span>
+      </div>
+
+      <!-- TODO: replace with real Instagram/Facebook profile URLs once available -->
+      <div class="contact-social">
+        <a href="#" aria-label="Housepooja on Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
+        <a href="#" aria-label="Housepooja on Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"></use></svg></a>
       </div>
     </div>
   </section>
@@ -823,6 +935,7 @@
           <span>Housepooja</span>
         </div>
         <p class="footer-tagline">Housewarming ceremonies, fully arranged.</p>
+        <p class="footer-address">138, Hi-Rise PVR Meadows, Mallampet, Bachupally, Hyderabad – 500090, India</p>
       </div>
       <div class="footer-social">
         <a href="#" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"></use></svg></a>
@@ -831,7 +944,7 @@
     </div>
     <div class="footer-bottom">
       <span>© <span id="year"></span> Housepooja.com</span>
-      <span>housepooja.com</span>
+      <span><a href="tel:+919845690809">+91 98456 90809</a> · <a href="mailto:27.sunil@gmail.com">27.sunil@gmail.com</a></span>
     </div>
   </div>
 </footer>
