@@ -5,9 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Housepooja — Gruhapravesh Package</title>
 <meta name="description" content="A complete Gruhapravesh housewarming package — priest, pooja samagri, decor, homam, food and photography, arranged as one booking.">
+<link rel="canonical" href="https://housepooja.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<meta property="og:title" content="Housepooja — Gruhapravesh Package">
+<meta property="og:description" content="A complete Gruhapravesh housewarming package — priest, pooja samagri, decor, homam, food and photography, arranged as one booking.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://housepooja.com/">
+<meta property="og:image" content="https://housepooja.com/resources/img/hero-doorway-welcome.jpg">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Housepooja — Gruhapravesh Package">
+<meta name="twitter:description" content="A complete Gruhapravesh housewarming package — priest, pooja samagri, decor, homam, food and photography, arranged as one booking.">
+<meta name="twitter:image" content="https://housepooja.com/resources/img/hero-doorway-welcome.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Housepooja",
+  "description": "A complete Gruhapravesh housewarming package — priest, pooja samagri, decor, homam, food and photography, arranged as one booking.",
+  "url": "https://housepooja.com/",
+  "telephone": "+919845690809",
+  "email": "27.sunil@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "138, Hi-Rise PVR Meadows, Mallampet, Bachupally",
+    "addressLocality": "Hyderabad",
+    "addressRegion": "Telangana",
+    "postalCode": "500090",
+    "addressCountry": "IN"
+  },
+  "areaServed": "Hyderabad, Telangana",
+  "priceRange": "₹₹₹"
+}
+</script>
+
 <style>
   :root{
     --maroon-950:#230810;
@@ -109,6 +144,8 @@
   }
   .btn--outline-dark:hover{ border-color:var(--vermillion); color:var(--vermillion); }
 
+  .btn--sm{ padding:0.6rem 1.15rem; font-size:0.85rem; }
+
   /* ---------- Header ---------- */
   .site-header{
     position:sticky;
@@ -145,13 +182,14 @@
   }
 
   .main-nav{ display:none; }
-  .main-nav ul{ display:flex; gap:2rem; }
+  .main-nav ul{ display:flex; gap:1.6rem; }
   .main-nav a{
     color:rgba(247,239,225,0.85);
-    font-size:0.95rem;
+    font-size:0.92rem;
     font-weight:600;
     position:relative;
     padding:0.25rem 0;
+    white-space:nowrap;
   }
   .main-nav a::after{
     content:"";
@@ -165,10 +203,6 @@
   .main-nav a:hover::after{ right:0; }
 
   .header-actions{ display:flex; align-items:center; gap:1.1rem; }
-  .social-links{ display:none; align-items:center; gap:0.9rem; }
-  .social-links a{ color:rgba(247,239,225,0.75); }
-  .social-links a:hover{ color:var(--gold-soft); }
-  .social-links .icon{ width:1.15rem; height:1.15rem; }
 
   .nav-toggle{
     background:none; border:none; color:var(--ivory-2);
@@ -191,17 +225,9 @@
     border-top:1px solid rgba(201,150,44,0.15);
     font-weight:600;
   }
-  .mobile-nav .mobile-social{
-    display:flex; gap:1.25rem;
-    padding:1rem 1.5rem 1.4rem;
-    border-top:1px solid rgba(201,150,44,0.15);
-  }
-  .mobile-nav .mobile-social a{ padding:0; border:none; color:var(--gold-soft); }
-  .mobile-nav .mobile-social .icon{ width:1.3rem; height:1.3rem; }
 
   @media (min-width:900px){
     .main-nav{ display:block; }
-    .social-links{ display:flex; }
     .nav-toggle{ display:none; }
     .mobile-nav{ display:none !important; }
   }
@@ -209,24 +235,33 @@
   /* ---------- Hero ---------- */
   .hero{
     position:relative;
-    background:radial-gradient(120% 140% at 50% -10%, var(--maroon-800), var(--maroon-950) 65%);
     color:var(--ivory-2);
     padding:5.5rem 0 6.5rem;
     overflow:hidden;
   }
-  .hero::before,
-  .hero::after{
+  .hero-bg{
+    position:absolute;
+    inset:0;
+    z-index:0;
+  }
+  .hero-bg img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 35%;
+  }
+  .hero-bg::after{
     content:"";
     position:absolute;
-    width:520px; height:520px;
-    border-radius:50%;
-    background:radial-gradient(circle, rgba(201,150,44,0.14), transparent 70%);
+    inset:0;
+    background:
+      radial-gradient(120% 140% at 50% -10%, rgba(74,21,36,0.72), rgba(35,8,16,0.88) 65%),
+      linear-gradient(180deg, rgba(35,8,16,0.55) 0%, rgba(35,8,16,0.86) 78%, rgba(35,8,16,0.95) 100%);
   }
-  .hero::before{ top:-220px; left:-160px; }
-  .hero::after{ bottom:-260px; right:-180px; background:radial-gradient(circle, rgba(15,76,74,0.28), transparent 70%); }
 
   .hero-inner{
     position:relative;
+    z-index:1;
     max-width:760px;
     margin:0 auto;
     text-align:center;
@@ -268,13 +303,14 @@
     color:var(--ivory-2);
     max-width:14ch;
     margin:0 auto;
+    text-shadow:0 2px 18px rgba(0,0,0,0.35);
   }
 
   .hero-lede{
     margin:1.6rem auto 0;
     max-width:52ch;
     font-size:1.08rem;
-    color:rgba(247,239,225,0.82);
+    color:rgba(247,239,225,0.88);
   }
 
   .hero-actions{
@@ -283,6 +319,42 @@
     justify-content:center;
     gap:1rem;
     margin-top:2.4rem;
+  }
+
+  /* ---------- Stats bar ---------- */
+  .stats-bar{
+    background:var(--maroon-950);
+    color:var(--ivory-2);
+    padding:2.1rem 0;
+    border-bottom:1px solid rgba(201,150,44,0.2);
+  }
+  .stats-grid{
+    display:grid;
+    gap:1.5rem 1rem;
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  @media (min-width:640px){ .stats-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (min-width:960px){ .stats-grid{ grid-template-columns:repeat(4,1fr); } }
+  .stat-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:0.5rem;
+    padding:0 0.5rem;
+  }
+  .stat-item .icon{ width:1.6rem; height:1.6rem; color:var(--gold-soft); }
+  .stat-item p{
+    font-size:0.88rem;
+    font-weight:600;
+    color:rgba(247,239,225,0.82);
+  }
+  @media (min-width:640px){
+    .stat-item{ border-left:1px solid rgba(201,150,44,0.2); }
+    .stat-item:first-child{ border-left:none; }
+  }
+  @media (min-width:960px){
+    .stat-item:nth-child(3){ border-left:1px solid rgba(201,150,44,0.2); }
   }
 
   /* ---------- Section shell ---------- */
@@ -312,6 +384,41 @@
     margin:0 auto 1.25rem;
   }
 
+  /* ---------- Our story ---------- */
+  .story{ background:var(--ivory-2); }
+  .story-grid{
+    display:grid;
+    gap:2.5rem;
+    grid-template-columns:1fr;
+    align-items:center;
+  }
+  @media (min-width:860px){ .story-grid{ grid-template-columns:1fr 1.1fr; gap:3.5rem; } }
+  .story-media{
+    position:relative;
+    border:1px solid rgba(42,24,16,0.12);
+    padding:0.6rem;
+    background:var(--ivory);
+  }
+  .story-media img{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+  }
+  @media (min-width:860px){ .story-media img{ aspect-ratio:4/4.4; } }
+  .story-copy .eyebrow{ display:block; margin-bottom:0.5rem; }
+  .story-copy h2{ font-size:clamp(1.9rem, 2.4vw + 1rem, 2.5rem); margin-bottom:1.2rem; }
+  .story-copy p{ color:var(--ink-soft); margin-bottom:1rem; }
+  .story-copy p:last-of-type{ margin-bottom:0; }
+  .story-signoff{
+    margin-top:1.6rem;
+    padding-top:1.4rem;
+    border-top:1px solid rgba(42,24,16,0.12);
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.15rem;
+    color:var(--maroon-900);
+  }
+  .story-signoff span{ display:block; font-family:'Manrope', sans-serif; font-size:0.82rem; color:var(--ink-soft); margin-top:0.2rem; }
+
   /* ---------- Why us ---------- */
   .why-us{ background:var(--ivory); }
   .value-grid{
@@ -320,7 +427,7 @@
     grid-template-columns:1fr;
   }
   @media (min-width:640px){ .value-grid{ grid-template-columns:1fr 1fr; } }
-  @media (min-width:1024px){ .value-grid{ grid-template-columns:repeat(4,1fr); } }
+  @media (min-width:1024px){ .value-grid{ grid-template-columns:repeat(5,1fr); } }
 
   .value-card{
     padding:2rem 1.6rem;
@@ -333,6 +440,43 @@
     margin-bottom:0.6rem;
   }
   .value-card p{ color:var(--ink-soft); font-size:0.96rem; }
+
+  /* ---------- Comparison ---------- */
+  .compare{ background:var(--ivory-2); }
+  .compare-grid{
+    display:grid;
+    gap:1.5rem;
+    grid-template-columns:1fr;
+    max-width:920px;
+    margin:0 auto;
+  }
+  @media (min-width:720px){ .compare-grid{ grid-template-columns:1fr 1fr; align-items:stretch; } }
+  .compare-card{
+    padding:2rem 1.8rem;
+    background:var(--ivory);
+    border:1px solid rgba(42,24,16,0.12);
+  }
+  .compare-card--us{
+    background:var(--maroon-950);
+    border-color:var(--maroon-950);
+    color:var(--ivory-2);
+  }
+  .compare-card h3{
+    font-size:1.3rem;
+    margin-bottom:1.2rem;
+  }
+  .compare-card--us h3{ color:var(--gold-soft); }
+  .compare-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:0.65rem;
+    font-size:0.92rem;
+    padding:0.45rem 0;
+    color:var(--ink-soft);
+  }
+  .compare-card--us .compare-list li{ color:rgba(247,239,225,0.82); }
+  .compare-list .icon{ width:1rem; height:1rem; flex-shrink:0; margin-top:0.25rem; color:var(--vermillion); }
+  .compare-card--us .compare-list .icon{ color:var(--gold); }
 
   /* ---------- Services ledger ---------- */
   .services{ background:var(--maroon-950); color:var(--ivory-2); }
@@ -376,19 +520,102 @@
     .ledger-item:nth-last-child(-n+2){ border-bottom:1px solid var(--line); }
   }
 
-  /* ---------- Gallery ---------- */
-  .gallery{ background:var(--ivory-2); }
-  .gallery-grid{
+  .checklist-cta{
+    margin:2.5rem auto 0;
+    max-width:920px;
+    text-align:center;
+  }
+  .checklist-cta p{
+    font-size:0.88rem;
+    color:rgba(247,239,225,0.6);
+    margin-top:0.8rem;
+  }
+
+  /* ---------- Customization ---------- */
+  .customize{ background:var(--ivory); }
+  .customize-grid{
     display:grid;
     gap:1.5rem;
     grid-template-columns:1fr;
   }
+  @media (min-width:720px){ .customize-grid{ grid-template-columns:repeat(3,1fr); } }
+  .customize-card{
+    padding:1.8rem 1.6rem;
+    background:var(--ivory-2);
+    border:1px solid rgba(42,24,16,0.12);
+  }
+  .customize-card h3{
+    font-size:1.15rem;
+    margin-bottom:1rem;
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+  }
+  .customize-card h3 .icon{ width:1.3rem; height:1.3rem; color:var(--teal); flex-shrink:0; }
+  .pill-list{ display:flex; flex-wrap:wrap; gap:0.55rem; }
+  .pill{
+    display:inline-block;
+    padding:0.4rem 0.85rem;
+    background:var(--ivory);
+    border:1px solid var(--line);
+    border-radius:999px;
+    font-size:0.85rem;
+    color:var(--maroon-900);
+  }
+
+  /* ---------- Booking steps ---------- */
+  .steps{ background:var(--ivory-2); }
+  .steps-row{
+    display:grid;
+    gap:2.5rem 1.5rem;
+    grid-template-columns:1fr;
+    position:relative;
+    max-width:1020px;
+    margin:0 auto;
+  }
+  @media (min-width:860px){
+    .steps-row{ grid-template-columns:repeat(4,1fr); }
+    .steps-row::before{
+      content:"";
+      position:absolute;
+      top:1.4rem;
+      left:12.5%;
+      right:12.5%;
+      height:1px;
+      background:var(--line);
+      z-index:0;
+    }
+  }
+  .step-item{ position:relative; text-align:center; z-index:1; }
+  .step-num{
+    width:2.8rem; height:2.8rem;
+    margin:0 auto 1.1rem;
+    border-radius:50%;
+    background:var(--maroon-950);
+    color:var(--gold-soft);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.3rem;
+    font-weight:700;
+    border:2px solid var(--gold);
+  }
+  .step-item h3{ font-size:1.15rem; margin-bottom:0.5rem; }
+  .step-item p{ font-size:0.9rem; color:var(--ink-soft); max-width:22ch; margin:0 auto; }
+
+  /* ---------- Gallery ---------- */
+  .gallery{ background:var(--ivory); }
+  .gallery-grid{
+    display:grid;
+    gap:1.25rem;
+    grid-template-columns:1fr;
+  }
   @media (min-width:640px){ .gallery-grid{ grid-template-columns:repeat(3,1fr); } }
+  @media (min-width:1100px){ .gallery-grid{ grid-template-columns:repeat(4,1fr); } }
 
   .gallery-item{
     margin:0;
     border:1px solid rgba(42,24,16,0.12);
-    background:var(--ivory);
+    background:var(--ivory-2);
     padding:0.6rem;
   }
   .gallery-item img{
@@ -401,8 +628,39 @@
     padding:0.9rem 0.3rem 0.2rem;
     text-align:center;
     font-family:'Cormorant Garamond', serif;
-    font-size:1.12rem;
+    font-size:1.08rem;
     color:var(--maroon-900);
+  }
+
+  /* ---------- Highlight reel ---------- */
+  .reel{ background:var(--ivory-2); }
+  .reel-frame{
+    position:relative;
+    max-width:820px;
+    margin:0 auto;
+    aspect-ratio:16/9;
+    border:1px solid rgba(42,24,16,0.12);
+    background:var(--maroon-950);
+    overflow:hidden;
+  }
+  .reel-frame img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition:opacity 1.2s ease;
+  }
+  .reel-frame img.is-active{ opacity:1; }
+  .reel-caption{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    padding:1.1rem 1.4rem;
+    background:linear-gradient(0deg, rgba(35,8,16,0.85), transparent);
+    color:var(--ivory-2);
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.15rem;
   }
 
   /* ---------- Pricing ---------- */
@@ -473,6 +731,64 @@
 
   .price-card .btn{ justify-content:center; width:100%; }
 
+  .price-footnote{
+    max-width:920px;
+    margin:2.5rem auto 0;
+    padding:1.5rem 1.75rem;
+    background:var(--ivory-2);
+    border:1px solid rgba(42,24,16,0.12);
+    border-left:3px solid var(--gold);
+    font-size:0.9rem;
+    color:var(--ink-soft);
+  }
+  .price-footnote strong{ color:var(--maroon-900); }
+  .price-footnote p + p{ margin-top:0.6rem; }
+
+  .urgency-note{
+    text-align:center;
+    max-width:640px;
+    margin:1.75rem auto 0;
+    font-size:0.9rem;
+    font-weight:600;
+    color:var(--gold-dim);
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq{ background:var(--ivory-2); }
+  .faq-list{ max-width:800px; margin:0 auto; }
+  .faq-item{
+    border-bottom:1px solid rgba(42,24,16,0.12);
+  }
+  .faq-item:first-child{ border-top:1px solid rgba(42,24,16,0.12); }
+  .faq-q{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    background:none;
+    border:none;
+    text-align:left;
+    padding:1.3rem 0.25rem;
+    font-family:'Cormorant Garamond', serif;
+    font-size:1.2rem;
+    color:var(--maroon-900);
+  }
+  .faq-q .icon{
+    width:1.2rem; height:1.2rem;
+    color:var(--gold-dim);
+    flex-shrink:0;
+    transition:transform 0.25s ease;
+  }
+  .faq-q[aria-expanded="true"] .icon{ transform:rotate(45deg); }
+  .faq-a{
+    padding:0 0.25rem 1.4rem;
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    max-width:65ch;
+  }
+  .faq-a[hidden]{ display:none; }
+
   /* ---------- Contact band ---------- */
   .contact-band{
     background:linear-gradient(135deg, var(--teal), var(--maroon-950) 75%);
@@ -512,10 +828,79 @@
   .contact-info-row a{ margin-left:0.3rem; border-bottom:1px solid rgba(247,239,225,0.35); }
   .contact-info-row a:hover{ color:var(--gold-soft); border-color:var(--gold-soft); }
 
-  .contact-social{ display:flex; justify-content:center; gap:1.25rem; margin-top:1.6rem; }
-  .contact-social a{ color:rgba(247,239,225,0.7); }
-  .contact-social a:hover{ color:var(--gold-soft); }
-  .contact-social .icon{ width:1.2rem; height:1.2rem; }
+  .service-area{
+    max-width:640px;
+    margin:1.75rem auto 0;
+    font-size:0.88rem;
+    color:rgba(247,239,225,0.68);
+  }
+
+  .map-embed{
+    max-width:820px;
+    margin:2.5rem auto 0;
+    border:1px solid rgba(247,239,225,0.25);
+    background:var(--maroon-950);
+    padding:0.5rem;
+  }
+  .map-embed iframe{
+    width:100%;
+    height:280px;
+    border:0;
+    display:block;
+  }
+
+  /* ---------- Lead form ---------- */
+  .lead-form{
+    max-width:640px;
+    margin:2.8rem auto 0;
+    background:var(--ivory-2);
+    color:var(--ink);
+    padding:2rem 1.75rem;
+    text-align:left;
+    border:1px solid rgba(42,24,16,0.12);
+  }
+  .lead-form h3{
+    font-size:1.4rem;
+    color:var(--maroon-900);
+    margin-bottom:0.4rem;
+  }
+  .lead-form > p{
+    font-size:0.88rem;
+    color:var(--ink-soft);
+    margin-bottom:1.4rem;
+  }
+  .form-grid{
+    display:grid;
+    gap:1rem;
+    grid-template-columns:1fr;
+  }
+  @media (min-width:560px){ .form-grid{ grid-template-columns:1fr 1fr; } }
+  .form-field{ display:flex; flex-direction:column; gap:0.4rem; }
+  .form-field--full{ grid-column:1/-1; }
+  .form-field label{
+    font-size:0.82rem;
+    font-weight:700;
+    color:var(--maroon-900);
+  }
+  .form-field input,
+  .form-field select,
+  .form-field textarea{
+    font:inherit;
+    font-size:0.95rem;
+    padding:0.7rem 0.85rem;
+    background:var(--ivory);
+    border:1px solid var(--line);
+    color:var(--ink);
+    border-radius:2px;
+  }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus{
+    outline:2px solid var(--gold);
+    outline-offset:1px;
+  }
+  .form-field textarea{ resize:vertical; min-height:5rem; }
+  .lead-form .btn{ margin-top:1.5rem; width:100%; justify-content:center; }
 
   /* ---------- Footer ---------- */
   footer{
@@ -539,10 +924,9 @@
   .footer-brand span{ font-family:'Cormorant Garamond', serif; font-size:1.2rem; color:var(--ivory-2); }
   .footer-tagline{ font-size:0.9rem; margin-top:0.35rem; color:rgba(247,239,225,0.55); }
   .footer-address{ font-size:0.85rem; margin-top:0.3rem; color:rgba(247,239,225,0.5); }
-  .footer-social{ display:flex; gap:1.2rem; }
-  .footer-social a{ color:rgba(247,239,225,0.75); }
-  .footer-social a:hover{ color:var(--gold-soft); }
-  .footer-social .icon{ width:1.2rem; height:1.2rem; }
+  .footer-links{ display:flex; gap:1.5rem; }
+  .footer-links a{ font-size:0.88rem; color:rgba(247,239,225,0.75); }
+  .footer-links a:hover{ color:var(--gold-soft); }
   .footer-bottom{
     padding-top:1.6rem;
     font-size:0.82rem;
@@ -552,6 +936,27 @@
     justify-content:space-between;
   }
   .footer-bottom a:hover{ color:var(--gold-soft); }
+
+  /* ---------- Floating WhatsApp button ---------- */
+  .fab-whatsapp{
+    position:fixed;
+    right:1.25rem;
+    bottom:1.25rem;
+    z-index:200;
+    width:3.4rem;
+    height:3.4rem;
+    border-radius:50%;
+    background:#25D366;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 10px 25px -8px rgba(35,8,16,0.55);
+    transition:transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .fab-whatsapp:hover{ transform:translateY(-2px) scale(1.04); box-shadow:0 14px 30px -8px rgba(35,8,16,0.6); }
+  .fab-whatsapp:focus-visible{ outline:3px solid var(--gold-soft); outline-offset:3px; }
+  .fab-whatsapp .icon{ width:1.7rem; height:1.7rem; fill:currentColor; stroke:none; }
 
   /* ---------- Scroll reveal ---------- */
   .reveal{ opacity:0; transform:translateY(14px); transition:opacity 0.6s ease, transform 0.6s ease; }
@@ -638,14 +1043,6 @@
       <path d="M24 22c-4 3-6 3-10 1" />
       <path d="M24 22c4 3 6 3 10 1" />
     </symbol>
-    <symbol id="i-instagram" viewBox="0 0 24 24">
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4.2" />
-      <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" />
-    </symbol>
-    <symbol id="i-facebook" viewBox="0 0 24 24">
-      <path d="M15 8h-2c-1.1 0-2 .9-2 2v2H9v3h2v6h3v-6h2.2l.8-3H14v-1.6c0-.5.4-.9.9-.9H16V8z" />
-    </symbol>
     <symbol id="i-menu" viewBox="0 0 24 24">
       <path d="M4 7h16" /><path d="M4 12h16" /><path d="M4 17h16" />
     </symbol>
@@ -674,6 +1071,34 @@
       <path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z" />
       <path d="M8.5 8.3c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.4.2.5.7 1.6.7 1.8.1.1.1.3 0 .4-.1.2-.1.3-.3.4l-.4.5c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.4.2.4.4 0 .6-.2 1.2-.6 1.6-.4.4-1.2.7-1.8.7-.9 0-2.4-.4-4.1-2-2-1.8-3.3-3.9-3.4-4.5-.1-.5-.6-1.5-.4-2.4z" />
     </symbol>
+    <symbol id="i-clock" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="17" />
+      <path d="M24 14v10l8 5" />
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 48 48">
+      <path d="M24 5l16 6v11c0 11-7 18-16 21C15 40 8 33 8 22V11z" />
+      <path d="M17 24l5 5 9-10" />
+    </symbol>
+    <symbol id="i-tag" viewBox="0 0 48 48">
+      <path d="M25 6h13v13L20 37 3 20z" />
+      <circle cx="32" cy="13" r="2.4" />
+    </symbol>
+    <symbol id="i-lang" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="17" />
+      <path d="M7 24h34" />
+      <path d="M24 7c5 5 7 11 7 17s-2 12-7 17c-5-5-7-11-7-17s2-12 7-17z" />
+    </symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24">
+      <path d="M12 4v16" /><path d="M4 12h16" />
+    </symbol>
+    <symbol id="i-plate" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="14" />
+      <circle cx="24" cy="24" r="7" />
+    </symbol>
+    <symbol id="i-map" viewBox="0 0 48 48">
+      <path d="M17 8L6 12v28l11-4 14 4 11-4V8l-11 4-14-4z" />
+      <path d="M17 8v28" /><path d="M31 12v28" />
+    </symbol>
   </defs>
 </svg>
 
@@ -690,15 +1115,12 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
     <div class="header-actions">
-      <div class="social-links">
-        <a href="#" aria-label="Housepooja on Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
-        <a href="#" aria-label="Housepooja on Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"></use></svg></a>
-      </div>
       <a class="btn btn--gold" href="#contact">Enquire Now</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
         <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"></use></svg>
@@ -712,16 +1134,16 @@
     <a href="#services">Services</a>
     <a href="#gallery">Gallery</a>
     <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
-    <div class="mobile-social">
-      <a href="#" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
-      <a href="#" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"></use></svg></a>
-    </div>
   </nav>
 </header>
 
 <main id="top">
   <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="resources/img/hero-doorway-welcome.jpg" alt="" loading="eager">
+    </div>
     <div class="wrap hero-inner">
       <div class="hero-frame">
         <div class="corner corner--tl"><svg class="icon"><use href="#i-corner"></use></svg></div>
@@ -736,6 +1158,45 @@
         <div class="hero-actions">
           <a class="btn btn--gold" href="#services">See what's included</a>
           <a class="btn btn--outline-light" href="#pricing">View pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-bar">
+    <div class="wrap stats-grid">
+      <div class="stat-item reveal">
+        <svg class="icon"><use href="#i-hand"></use></svg>
+        <p>Family-run, one point of contact throughout</p>
+      </div>
+      <div class="stat-item reveal">
+        <svg class="icon"><use href="#i-shield"></use></svg>
+        <p>Priests vetted for authenticity and experience</p>
+      </div>
+      <div class="stat-item reveal">
+        <svg class="icon"><use href="#i-gift"></use></svg>
+        <p>One fixed price — nothing added later</p>
+      </div>
+      <div class="stat-item reveal">
+        <svg class="icon"><use href="#i-door"></use></svg>
+        <p>Hyderabad-based, on-site for every ceremony</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="story section-pad" id="story">
+    <div class="wrap story-grid">
+      <div class="story-media reveal">
+        <img src="resources/img/family-group-doorway-portrait.jpg" alt="A multi-generational family standing together at their decorated doorway during a housewarming" loading="lazy">
+      </div>
+      <div class="story-copy reveal">
+        <span class="eyebrow">Our Story</span>
+        <h2>Run by Sunil &amp; Ramya, not a call centre</h2>
+        <p>Housepooja is a family-run practice based in Bachupally, Hyderabad. Sunil Kumar Tekumal and Ramya Tekumal coordinate every booking personally — the same two people you speak to on the phone are the ones making sure the priest, the samagri and the caterer all show up on time on the day.</p>
+        <p>That's the whole idea: one family taking responsibility for another family's ceremony, so nothing falls between a dozen different vendors.</p>
+        <div class="story-signoff">
+          Sunil &amp; Ramya Tekumal
+          <span>Housepooja, Bachupally, Hyderabad</span>
         </div>
       </div>
     </div>
@@ -760,6 +1221,11 @@
           <p>A priest leads the full ceremony correctly, even if your family's customs are something you've never had to organise yourself.</p>
         </div>
         <div class="value-card reveal">
+          <svg class="icon"><use href="#i-clock"></use></svg>
+          <h3>Muhurat, sorted</h3>
+          <p>We help you settle on an auspicious date and time for the ceremony, not just the logistics around it.</p>
+        </div>
+        <div class="value-card reveal">
           <svg class="icon"><use href="#i-flame"></use></svg>
           <h3>Your weekend, back</h3>
           <p>Setup, service and cleanup are ours to handle, so the day is about your guests, not your task list.</p>
@@ -768,6 +1234,36 @@
           <svg class="icon"><use href="#i-gift"></use></svg>
           <h3>One price, no surprises</h3>
           <p>The package covers everything on the list below — nothing shows up afterward as an extra line item.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="compare section-pad" id="compare">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">The Difference</span>
+        <h2>Booking it yourself vs. booking Housepooja</h2>
+        <p>The ceremony ends up the same either way. Getting there doesn't.</p>
+      </div>
+      <div class="compare-grid">
+        <div class="compare-card reveal">
+          <h3>Booking it yourself</h3>
+          <ul class="compare-list">
+            <li><svg class="icon"><use href="#i-close"></use></svg>Separate calls to a priest, florist, decorator, caterer and photographer</li>
+            <li><svg class="icon"><use href="#i-close"></use></svg>You confirm the muhurat, then chase everyone else to match it</li>
+            <li><svg class="icon"><use href="#i-close"></use></svg>Multiple advances, multiple invoices, multiple people to track down</li>
+            <li><svg class="icon"><use href="#i-close"></use></svg>No single person accountable if something's missed on the day</li>
+          </ul>
+        </div>
+        <div class="compare-card compare-card--us reveal">
+          <h3>With Housepooja</h3>
+          <ul class="compare-list">
+            <li><svg class="icon"><use href="#i-check"></use></svg>One enquiry, one team, eleven services arranged for you</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg>Muhurat and date settled together with us, once</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg>One price, one advance, one point of contact</li>
+            <li><svg class="icon"><use href="#i-check"></use></svg>Sunil &amp; Ramya are on-site to see it through</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -826,6 +1322,81 @@
           <div class="ledger-copy"><h3>Photography</h3><p>The day captured and handed to you as a soft copy.</p></div>
         </div>
       </div>
+      <div class="checklist-cta reveal">
+        <a class="btn btn--outline-light btn--sm" href="resources/gruhapravesh-checklist.html" target="_blank" rel="noopener">Download the checklist (printable page)</a>
+        <p>Opens as a printable page — save it as a PDF from your browser's print dialog.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="customize section-pad" id="customize">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Make It Yours</span>
+        <h2>Built around your family's traditions</h2>
+        <p>Every package can be tailored before we confirm your date — just tell us what applies when you enquire.</p>
+      </div>
+      <div class="customize-grid">
+        <div class="customize-card reveal">
+          <h3><svg class="icon"><use href="#i-tag"></use></svg>Regional tradition</h3>
+          <div class="pill-list">
+            <span class="pill">Telugu</span>
+            <span class="pill">Kannada</span>
+            <span class="pill">Tamil</span>
+            <span class="pill">North Indian</span>
+          </div>
+        </div>
+        <div class="customize-card reveal">
+          <h3><svg class="icon"><use href="#i-lang"></use></svg>Priest's language</h3>
+          <div class="pill-list">
+            <span class="pill">Telugu</span>
+            <span class="pill">Kannada</span>
+            <span class="pill">Tamil</span>
+            <span class="pill">Hindi</span>
+            <span class="pill">English</span>
+          </div>
+        </div>
+        <div class="customize-card reveal">
+          <h3><svg class="icon"><use href="#i-plate"></use></svg>Dietary preference</h3>
+          <div class="pill-list">
+            <span class="pill">Pure satvik</span>
+            <span class="pill">Jain-style</span>
+            <span class="pill">No onion/garlic</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps section-pad" id="how-it-works">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">How Booking Works</span>
+        <h2>Four steps from enquiry to ceremony</h2>
+        <p>No back-and-forth between vendors — just a straight line from your first message to the day itself.</p>
+      </div>
+      <div class="steps-row">
+        <div class="step-item reveal">
+          <div class="step-num">1</div>
+          <h3>Enquire</h3>
+          <p>Message us on WhatsApp, call, or use the form below.</p>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-num">2</div>
+          <h3>Consultation</h3>
+          <p>We talk through your guest count, traditions, and settle on a muhurat.</p>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-num">3</div>
+          <h3>Confirm your date</h3>
+          <p>A confirmation advance locks in the date and the full team.</p>
+        </div>
+        <div class="step-item reveal">
+          <div class="step-num">4</div>
+          <h3>Day of the ceremony</h3>
+          <p>We arrive early and run the whole day — you just welcome your guests.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -834,21 +1405,74 @@
       <div class="section-head reveal">
         <span class="eyebrow">A Glimpse</span>
         <h2>The details we bring with us</h2>
-        <p>A small look at the samagri, flowers and rituals that go into every Gruhapravesh we arrange.</p>
+        <p>A look at the samagri, decor, food and rituals that go into every Gruhapravesh we arrange.</p>
       </div>
       <div class="gallery-grid">
         <figure class="gallery-item reveal">
-          <img src="resources/img/diya-petals.jpg" alt="A lit clay diya resting among marigold petals" loading="lazy">
-          <figcaption>Diya, lit for the homam</figcaption>
+          <img src="resources/img/kalash-samagri-flatlay.jpg" alt="Pooja samagri laid out: brass kalash, turmeric, kumkum, betel leaves and marigold" loading="lazy">
+          <figcaption>Samagri, laid out and ready</figcaption>
         </figure>
         <figure class="gallery-item reveal">
-          <img src="resources/img/marigold.jpg" alt="Close-up of a fresh marigold flower used in the decor" loading="lazy">
-          <figcaption>Fresh marigold for the decor</figcaption>
+          <img src="resources/img/mandap-backdrop-styled.jpg" alt="A styled wooden mandap backdrop decorated with marigold and jasmine garlands" loading="lazy">
+          <figcaption>The mandap, styled for the day</figcaption>
         </figure>
         <figure class="gallery-item reveal">
-          <img src="resources/img/puja-thali.jpg" alt="A decorated pooja thali with kumkum and ritual items" loading="lazy">
+          <img src="resources/img/priest-performing-homam.jpg" alt="A priest pouring ghee into the homam fire during the ceremony" loading="lazy">
+          <figcaption>The homam, led by our priest</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="resources/img/diya-marigold-petals.jpg" alt="A lit clay diya resting among scattered marigold petals" loading="lazy">
+          <figcaption>Diya, lit for the ceremony</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="resources/img/flower-garland-closeup.jpg" alt="Hands stringing a fresh marigold and jasmine garland" loading="lazy">
+          <figcaption>Garlands, strung fresh</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="resources/img/couple-coconut-threshold.jpg" alt="A couple in traditional attire about to break a coconut at their new home's threshold" loading="lazy">
+          <figcaption>Crossing the threshold</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="resources/img/puja-thali-decorated.jpg" alt="A decorated brass pooja thali with kumkum, turmeric and a lit lamp" loading="lazy">
           <figcaption>The pooja thali, ready</figcaption>
         </figure>
+        <figure class="gallery-item reveal">
+          <img src="resources/img/satvik-food-banana-leaf.jpg" alt="A traditional satvik meal served on a banana leaf with rice, sambar and payasam" loading="lazy">
+          <figcaption>Satvik food, on a banana leaf</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="resources/img/cow-puja-gau-puja.jpg" alt="A marigold-garlanded cow being honoured during Gau Puja at the entrance" loading="lazy">
+          <figcaption>Gau Puja, arranged for the day</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="resources/img/return-gifts-arranged.jpg" alt="Small return-gift boxes wrapped in maroon and gold with a marigold sprig" loading="lazy">
+          <figcaption>Return gifts, wrapped and ready</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="resources/img/rangoli-kolam-entrance.jpg" alt="An intricate rice-flour rangoli drawn at the home's entrance" loading="lazy">
+          <figcaption>Rangoli at the entrance</figcaption>
+        </figure>
+        <figure class="gallery-item reveal">
+          <img src="resources/img/brass-bell-and-diya.jpg" alt="A traditional brass bell resting beside a lit oil lamp" loading="lazy">
+          <figcaption>Bell and lamp, on the altar</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="reel section-pad" id="glimpse-in-motion">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">A Glimpse in Motion</span>
+        <h2>What the day actually looks like</h2>
+        <p>A short sequence from real ceremony moments — the fire, the food, the guests, the person behind the camera.</p>
+      </div>
+      <div class="reel-frame reveal" id="reel">
+        <img src="resources/img/homam-fire-ritual-wide.jpg" alt="A full homam fire ceremony in progress with family seated around it" class="is-active" data-caption="The homam, in full flow">
+        <img src="resources/img/guests-seated-ceremony-wide.jpg" alt="Guests seated on the floor facing the priest during the ceremony" data-caption="Guests, seated for the ceremony">
+        <img src="resources/img/serving-staff-in-action.jpg" alt="Catering staff serving rice and sambar to seated guests" data-caption="Serving staff, mid-lunch">
+        <img src="resources/img/photographer-candid-moment.jpg" alt="A photographer crouched low, capturing the ceremony" data-caption="Captured, as it happens">
+        <div class="reel-caption" id="reelCaption">The homam, in full flow</div>
       </div>
     </div>
   </section>
@@ -898,6 +1522,49 @@
           <a class="btn btn--outline-dark" href="#contact">Enquire Now</a>
         </div>
       </div>
+
+      <p class="urgency-note reveal">Weekend dates go first — most families confirm 3–4 weeks ahead.</p>
+
+      <div class="price-footnote reveal">
+        <p><strong>Add-ons:</strong> extra guests beyond your tier, an additional homam, or extended catering hours — all priced on request, just ask us for a quote.</p>
+        <p><strong>Payment:</strong> a confirmation advance secures your date, with the balance due on the day. The amounts above are the full package price — nothing is added later.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq section-pad" id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Questions</span>
+        <h2>Before you enquire</h2>
+        <p>The things families usually ask before fixing a date.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">What can be customised?<svg class="icon"><use href="#i-plus"></use></svg></button>
+          <div class="faq-a" hidden>Regional tradition, the priest's preferred language, and dietary preferences for the food can all be set when you enquire — see the "Make It Yours" section above.</div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">Can you accommodate specific dietary needs?<svg class="icon"><use href="#i-plus"></use></svg></button>
+          <div class="faq-a" hidden>Yes — the food is satvik vegetarian by default, and we can adjust for Jain-style or no onion/garlic preferences. Let us know when we speak.</div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">How does the advance and cancellation work?<svg class="icon"><use href="#i-plus"></use></svg></button>
+          <div class="faq-a" hidden>A confirmation advance secures your date; the balance is due on the day. If your plans change, please speak to us directly — we handle cancellations and postponements case by case.</div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">How far in advance should we book?<svg class="icon"><use href="#i-plus"></use></svg></button>
+          <div class="faq-a" hidden>As early as you can once you have a likely date — weekend dates fill up fastest. Most families reach out 3–4 weeks ahead, though we'll always try to help with less notice.</div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">What if our guest count changes?<svg class="icon"><use href="#i-plus"></use></svg></button>
+          <div class="faq-a" hidden>Let us know as soon as you have an updated number. Small changes are usually easy to absorb; larger increases beyond your tier are priced on request.</div>
+        </div>
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">Do you travel outside Hyderabad?<svg class="icon"><use href="#i-plus"></use></svg></button>
+          <div class="faq-a" hidden>We're based in Bachupally and regularly serve nearby areas across Hyderabad. Outside that, just ask — we can often arrange it.</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -917,11 +1584,69 @@
         <span class="contact-info-row"><svg class="icon"><use href="#i-pin"></use></svg>138, Hi-Rise PVR Meadows, Mallampet, Bachupally, Hyderabad – 500090</span>
       </div>
 
-      <!-- TODO: replace with real Instagram/Facebook profile URLs once available -->
-      <div class="contact-social">
-        <a href="#" aria-label="Housepooja on Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"></use></svg></a>
-        <a href="#" aria-label="Housepooja on Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"></use></svg></a>
+      <p class="service-area">We're based in Bachupally and regularly serve Nizampet, Kompally, Miyapur, Kukatpally, Gachibowli, Madhapur and greater Hyderabad — outside this area, just ask.</p>
+
+      <div class="map-embed reveal">
+        <iframe title="Housepooja location — 138, Hi-Rise PVR Meadows, Mallampet, Bachupally, Hyderabad" src="https://www.google.com/maps?q=138%20Hi-Rise%20PVR%20Meadows%2C%20Mallampet%2C%20Bachupally%2C%20Hyderabad%20500090&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
+
+      <form class="lead-form reveal" id="leadForm">
+        <h3>Get a callback</h3>
+        <p>Share a few details and we'll message you on WhatsApp to take it from there.</p>
+        <div class="form-grid">
+          <div class="form-field form-field--full">
+            <label for="leadName">Your name*</label>
+            <input type="text" id="leadName" name="name" required autocomplete="name">
+          </div>
+          <div class="form-field form-field--full">
+            <label for="leadPhone">Phone number*</label>
+            <input type="tel" id="leadPhone" name="phone" required autocomplete="tel">
+          </div>
+          <div class="form-field">
+            <label for="leadGuests">Guest count</label>
+            <select id="leadGuests" name="guests">
+              <option value="Around 100">Around 100</option>
+              <option value="Around 150">Around 150</option>
+              <option value="Around 200">Around 200</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="leadTradition">Regional tradition</label>
+            <select id="leadTradition" name="tradition">
+              <option value="Telugu">Telugu</option>
+              <option value="Kannada">Kannada</option>
+              <option value="Tamil">Tamil</option>
+              <option value="North Indian">North Indian</option>
+              <option value="Not sure yet">Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="leadLanguage">Priest's language</label>
+            <select id="leadLanguage" name="language">
+              <option value="Telugu">Telugu</option>
+              <option value="Kannada">Kannada</option>
+              <option value="Tamil">Tamil</option>
+              <option value="Hindi">Hindi</option>
+              <option value="English">English</option>
+              <option value="No preference">No preference</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="leadDiet">Dietary preference</label>
+            <select id="leadDiet" name="diet">
+              <option value="Pure satvik">Pure satvik</option>
+              <option value="Jain-style">Jain-style</option>
+              <option value="No onion/garlic">No onion/garlic</option>
+            </select>
+          </div>
+          <div class="form-field form-field--full">
+            <label for="leadNote">Anything else?</label>
+            <textarea id="leadNote" name="note" placeholder="Likely date, locality, or anything we should know"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn--gold">Send via WhatsApp</button>
+      </form>
     </div>
   </section>
 </main>
@@ -937,9 +1662,10 @@
         <p class="footer-tagline">Housewarming ceremonies, fully arranged.</p>
         <p class="footer-address">138, Hi-Rise PVR Meadows, Mallampet, Bachupally, Hyderabad – 500090, India</p>
       </div>
-      <div class="footer-social">
-        <a href="#" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"></use></svg></a>
-        <a href="#" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"></use></svg></a>
+      <div class="footer-links">
+        <a href="resources/gruhapravesh-checklist.html" target="_blank" rel="noopener">Checklist</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -948,6 +1674,10 @@
     </div>
   </div>
 </footer>
+
+<a class="fab-whatsapp" href="https://wa.me/919845690809" target="_blank" rel="noopener" aria-label="Message Housepooja on WhatsApp">
+  <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+</a>
 
 <script>
   (function(){
@@ -991,6 +1721,59 @@
     }
 
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        var panel = btn.nextElementSibling;
+        btn.setAttribute('aria-expanded', String(!open));
+        panel.hidden = open;
+      });
+    });
+
+    // Highlight reel crossfade — static when reduced motion is requested
+    var reel = document.getElementById('reel');
+    if (reel && !prefersReduced) {
+      var slides = reel.querySelectorAll('img');
+      var caption = document.getElementById('reelCaption');
+      var idx = 0;
+      setInterval(function(){
+        slides[idx].classList.remove('is-active');
+        idx = (idx + 1) % slides.length;
+        slides[idx].classList.add('is-active');
+        if (caption) { caption.textContent = slides[idx].getAttribute('data-caption') || ''; }
+      }, 4000);
+    }
+
+    // Lead capture form -> WhatsApp
+    var leadForm = document.getElementById('leadForm');
+    if (leadForm) {
+      leadForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        var name = document.getElementById('leadName').value.trim();
+        var phone = document.getElementById('leadPhone').value.trim();
+        var guests = document.getElementById('leadGuests').value;
+        var tradition = document.getElementById('leadTradition').value;
+        var language = document.getElementById('leadLanguage').value;
+        var diet = document.getElementById('leadDiet').value;
+        var note = document.getElementById('leadNote').value.trim();
+
+        var lines = [
+          'Hi Housepooja, I\'d like a callback about a Gruhapravesh booking.',
+          'Name: ' + name,
+          'Phone: ' + phone,
+          'Guest count: ' + guests,
+          'Regional tradition: ' + tradition,
+          'Priest\'s language: ' + language,
+          'Dietary preference: ' + diet
+        ];
+        if (note) { lines.push('Note: ' + note); }
+
+        var message = encodeURIComponent(lines.join('\n'));
+        window.open('https://wa.me/919845690809?text=' + message, '_blank', 'noopener');
+      });
+    }
   })();
 </script>
 
